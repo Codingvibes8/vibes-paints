@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
@@ -8,7 +9,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white">NellyPaints</h3>
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden">
+                 <Image
+                  src="/logo.png"
+                  alt="NellyPaints Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <span className="hidden md:inline-block font-bold text-xl md:text-2xl text-brand-cream font-playfair">
+                NellyPaints
+              </span>
+            </Link>
             <p className="text-brand-cream/80 text-sm leading-relaxed max-w-xs">
               Premium painting and decorating services for discerning homeowners in NW London. Transforming spaces with care and precision.
             </p>
