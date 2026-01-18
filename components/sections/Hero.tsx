@@ -31,7 +31,7 @@ export function Hero() {
               Get a Free Quote
             </Button>
             <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/40 font-semibold text-lg px-8 py-6 h-auto backdrop-blur-sm transition-all hover:border-white">
-              Call Nelly
+              Call Dayo
             </Button>
           </div>
           <div className="pt-8 flex items-center gap-4 text-white/90 text-sm font-medium">
