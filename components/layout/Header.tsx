@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -14,6 +15,7 @@ const navItems = [
 
 export function Header() {
   const [activeItem, setActiveItem] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,10 +37,18 @@ export function Header() {
     };
   }, []);
 
+  // Check if a nav item is active based on pathname or hash
+  const isActiveItem = (href: string) => {
+    if (href.startsWith("#")) {
+      return activeItem === href;
+    }
+    return pathname === href;
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-20 items-center justify-between mx-auto px-4 md:px-8">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2 mr-8">
           <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden">
              <Image
               src="/logo.png"
@@ -49,8 +59,9 @@ export function Header() {
             />
           </div>
           <span className="hidden md:inline-block font-bold text-xl md:text-2xl text-brand-teal font-playfair">
-            NellyPaints
-          </span>
+            Nelly
+                <span className="text-brand-red" >Paints</span>
+           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -58,11 +69,11 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={`text-sm tracking-wide uppercase font-semibold transition-all duration-300 hover:text-brand-red ${
-                activeItem === item.href ? "text-brand-teal scale-110" : "text-stone-500"
+                isActiveItem(item.href) ? "text-red-800 underline font-bold scale-110" : "text-stone-500"
               }`}
             >
               {item.name}
-              {activeItem === item.href && (
+              {isActiveItem(item.href) && (
                 <div className="h-0.5 w-full bg-brand-red mt-0.5 animate-in fade-in zoom-in duration-300" />
               )}
             </Link>

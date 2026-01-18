@@ -36,11 +36,25 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log("Form data:", data);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitted(true);
-    reset();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setIsSubmitted(true);
+      reset();
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again or email us directly.');
+    }
   };
 
   if (isSubmitted) {
@@ -101,11 +115,11 @@ export function ContactForm() {
             </div>
           </div>
 
-          <div className="bg-brand-cream p-8 md:p-12 rounded-[2rem] shadow-2xl border border-brand-teal/5">
+          <div className="bg-teal-200 p-8 md:p-12 rounded-[2rem] shadow-2xl border border-brand-teal/5">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-bold text-brand-teal uppercase tracking-wider ml-1">Name</label>
+                  <label htmlFor="name" className="text-sm font-bold text-brand-teal uppercase tracking-wider ml-1">Name:</label>
                   <input
                     id="name"
                     type="text"
@@ -118,7 +132,7 @@ export function ContactForm() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold text-brand-teal uppercase tracking-wider ml-1">Email</label>
+                  <label htmlFor="email" className="text-sm font-bold text-brand-teal uppercase tracking-wider ml-1">Email:</label>
                   <input
                     id="email"
                     type="email"
@@ -133,7 +147,7 @@ export function ContactForm() {
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="service" className="text-sm font-bold text-brand-teal uppercase tracking-wider ml-1">Service Required</label>
+                <label htmlFor="service" className="text-sm font-bold text-brand-teal uppercase tracking-wider ml-1">Service Required:</label>
                 <select 
                   id="service"
                   {...register("service")}
@@ -150,7 +164,7 @@ export function ContactForm() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold text-brand-teal uppercase tracking-wider ml-1">Message</label>
+                <label htmlFor="message" className="text-sm font-bold text-brand-teal uppercase tracking-wider ml-1">Message:</label>
                 <textarea
                   id="message"
                   rows={4}

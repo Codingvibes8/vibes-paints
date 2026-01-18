@@ -9,28 +9,24 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden">
-                 <Image
-                  src="/logo.png"
-                  alt="NellyPaints Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <span className="hidden md:inline-block font-bold text-xl md:text-2xl text-brand-cream font-playfair">
-                NellyPaints
-              </span>
+            <Link href="/" className="flex items-center">
+             
+              <span className="font-bold font-playfair text-xl md:text-2xl text-brand-cream font-playfair">
+                Nelly
+                 </span>
+                <span className="font-bold font-playfair text-xl md:text-2xl text-brand-red" >
+                  Paints
+                  </span>
+              
             </Link>
-            <p className="text-brand-cream/80 text-sm leading-relaxed max-w-xs">
+            <p className="font-serif text-brand-cream/80 text-sm leading-relaxed max-w-xs">
               Premium painting and decorating services for discerning homeowners in NW London. Transforming spaces with care and precision.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-brand-cream">Explore</h4>
+            <h4 className="font-playfair text-lg font-semibold text-brand-cream">Explore</h4>
             <nav className="flex flex-col space-y-2">
               <Link href="#" className="text-white/80 hover:text-white transition-colors text-sm">Home</Link>
               <Link href="#services" className="text-white/80 hover:text-white transition-colors text-sm">Services</Link>
@@ -41,7 +37,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-brand-cream">Contact Us</h4>
+            <h4 className="font-playfair text-lg font-semibold text-brand-cream">Contact Us</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <MapPin className="h-4 w-4 text-brand-red" />
@@ -60,7 +56,7 @@ export function Footer() {
 
           {/* Socials / Legal */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-brand-cream">Follow Us</h4>
+            <h4 className="font-playfair text-lg font-semibold text-brand-cream">Follow Us</h4>
             <div className="flex gap-4">
               <Link href="#" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                 <Instagram className="h-5 w-5" />
