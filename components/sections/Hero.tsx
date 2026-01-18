@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { MessageSquare, Phone } from "lucide-react";
 
 export function Hero() {
   return (
@@ -23,14 +24,16 @@ export function Hero() {
               Premium Painting & Decorating in <span className="text-brand-cream">NW London</span>
             </h1>
             <p className="text-lg md:text-xl text-stone-100 max-w-[600px] leading-relaxed drop-shadow-sm font-medium">
-              Transforming homes with flawless finishes, reliable service, and a clean, tidy experience. Serving Hampstead, Kilburn, and beyond.
+              Transforming homes with flawless finishes, reliable service, and a clean, tidy experience. Serving NW2, Kilburn, and beyond.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <Button size="lg" className="bg-brand-red hover:bg-brand-red/90 text-white font-bold text-lg px-8 py-6 h-auto shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
+            <Button size="lg" className="bg-brand-red hover:bg-brand-red/90 text-white font-bold text-lg px-8 py-6 h-auto shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center gap-2">
+              <MessageSquare className="w-5 h-5" />
               Get a Free Quote
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/40 font-semibold text-lg px-8 py-6 h-auto backdrop-blur-sm transition-all hover:border-white">
+            <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-teal-500 border-white/40 font-semibold text-lg px-8 py-6 h-auto backdrop-blur-sm transition-all hover:border-white flex items-center gap-2">
+              <Phone className="w-5 h-5" />
               Call Dayo
             </Button>
           </div>

@@ -67,7 +67,7 @@ export function ContactForm() {
             </div>
             <h3 className="text-3xl font-bold font-playfair">Message Sent!</h3>
             <p className="text-brand-cream/80 text-lg max-w-md mx-auto">
-              Thank you for reaching out. Nelly will get back to you within 24 hours to discuss your project.
+              Thank you for reaching out. Dayo will get back to you within 24 hours to discuss your project.
             </p>
             <Button 
               onClick={() => setIsSubmitted(false)}
@@ -98,7 +98,7 @@ export function ContactForm() {
                   <span className="text-brand-red">your space?</span>
                 </h2>
                 <p className="text-xl text-stone-600 leading-relaxed font-light max-w-lg">
-                  Get in touch for a free, no-obligation quote. Nelly provides expert advice and precise estimates for all your decorating needs.
+                  Get in touch for a free, no-obligation quote. Dayo provides expert advice and precise estimates for all your decorating needs.
                 </p>
             </div>
 
@@ -108,8 +108,8 @@ export function ContactForm() {
                         <Send className="w-6 h-6" />
                     </div>
                     <div>
-                        <h4 className="text-lg font-bold text-brand-teal">Email Nelly</h4>
-                        <p className="text-stone-500">info@nellypaints.co.uk</p>
+                        <h4 className="text-lg font-bold text-brand-teal">Email Dayo</h4>
+                        <p className="text-stone-500">adestar860@gmail.com</p>
                     </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "NellyPaints | Premium Painter & Decorator in NW London",
+  title: "DayoPaints | Premium Painter & Decorator in NW London",
   description: "High-quality painting and decorating services in Hampstead, Kilburn, and Cricklewood. Interior, exterior, wallpapering, and more.",
 };
 

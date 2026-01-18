@@ -9,16 +9,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center">
-             
-              <span className="font-bold font-playfair text-xl md:text-2xl text-brand-cream font-playfair">
-                Nelly
-                 </span>
-                <span className="font-bold font-playfair text-xl md:text-2xl text-brand-red" >
-                  Paints
-                  </span>
-              
-            </Link>
+          <Link href="/" className="flex items-center rounded-md ring-2 ring-red-800 px-2 bg-teal-300">
+            <span className="text-xl md:text-2xl text-brand-teal font-playfair">
+              Dayo<span className="text-brand-red font-bold font-playfair">Paints</span>
+            </span>
+          </Link>
             <p className="font-serif text-brand-cream/80 text-sm leading-relaxed max-w-xs">
               Premium painting and decorating services for discerning homeowners in NW London. Transforming spaces with care and precision.
             </p>
@@ -41,15 +36,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <MapPin className="h-4 w-4 text-brand-red" />
-                <span>Hampstead, NW3 & Surrounding Areas</span>
+                <span>NW2 2SH & Surrounding Areas</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <Phone className="h-4 w-4 text-brand-red" />
-                <span>020 7123 4567</span>
+                <span>07555 149255</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <Mail className="h-4 w-4 text-brand-red" />
-                <span>hello@nellypaints.co.uk</span>
+                <span>adestar860@gmail.com</span>
               </div>
             </div>
           </div>
@@ -72,7 +67,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
-          <p>&copy; {new Date().getFullYear()} NellyPaints Ltd. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} DayoPaints Ltd. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

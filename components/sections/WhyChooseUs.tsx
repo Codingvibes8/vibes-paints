@@ -36,7 +36,7 @@ export function WhyChooseUs() {
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
                     <div className="lg:w-1/2 space-y-10">
                         <div className="inline-block px-4 py-1.5 rounded-full border border-brand-red/30 bg-brand-red/10 text-brand-cream text-sm font-semibold tracking-wider uppercase mb-2">
-                           The NellyPaints Promise
+                           The DayoPaints Promise
                         </div>
                         <h2 className="text-4xl md:text-6xl font-bold font-playfair leading-tight">
                             More than just <br />
@@ -49,13 +49,13 @@ export function WhyChooseUs() {
                         <div className="relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl">
                              <div className="absolute -top-4 -left-4 text-6xl text-brand-red opacity-40 font-serif">"</div>
                             <p className="italic text-xl text-white font-medium leading-relaxed">
-                                NellyPaints transformed our Victorian terrace in Hampstead. The attention to detail was incredible, and they were a pleasure to have in our home.
+                                DayoPaints transformed our Victorian terrace. The attention to detail was incredible, and they were a pleasure to have in our home.
                             </p>
                             <div className="mt-6 flex items-center gap-4">
                                 <div className="h-10 w-10 rounded-full bg-brand-cream text-brand-teal flex items-center justify-center font-bold">S</div>
                                 <div>
                                     <div className="font-bold text-brand-cream">Sarah & Tom</div>
-                                    <div className="text-sm text-white/50">Hampstead, NW3</div>
+                                    <div className="text-sm text-white/50">NW2, London</div>
                                 </div>
                             </div>
                         </div>

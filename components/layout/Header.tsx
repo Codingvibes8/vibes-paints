@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { name: "Services", href: "#services" },
@@ -15,6 +16,7 @@ const navItems = [
 
 export function Header() {
   const [activeItem, setActiveItem] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -45,23 +47,18 @@ export function Header() {
     return pathname === href;
   };
 
+  // Close mobile menu when clicking a link
+  const handleMobileNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-20 items-center justify-between mx-auto px-4 md:px-8">
-        <Link href="/" className="flex items-center space-x-2 mr-8">
-          <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden">
-             <Image
-              src="/logo.png"
-              alt="NellyPaints Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          <span className="hidden md:inline-block font-bold text-xl md:text-2xl text-brand-teal font-playfair">
-            Nelly
-                <span className="text-brand-red" >Paints</span>
-           </span>
+        <Link href="/" className="flex items-center rounded-md ring-2 ring-red-800 px-2 bg-teal-300">
+          <span className="text-xl md:text-2xl text-brand-teal font-playfair">
+            Dayo<span className="text-brand-red font-bold font-playfair">Paints</span>
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -86,25 +83,48 @@ export function Header() {
         </nav>
         {/* Mobile Menu Trigger */}
         <div className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-brand-teal">
-                <span className="sr-only">Open menu</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className="w-8 h-8"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="text-brand-teal"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+                <span className="sr-only">{mobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
+                {mobileMenuOpen ? (
+                  <X className="w-8 h-8" />
+                ) : (
+                  <Menu className="w-8 h-8" />
+                )}
             </Button>
         </div>
       </div>
+
+      {/* Mobile Menu Panel */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-border/40 animate-in slide-in-from-top-2 duration-200">
+          <nav className="container px-4 py-6 flex flex-col gap-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={handleMobileNavClick}
+                className={`text-lg font-semibold py-3 px-4 rounded-lg transition-all ${
+                  isActiveItem(item.href) 
+                    ? "text-brand-red bg-brand-red/10" 
+                    : "text-stone-600 hover:bg-stone-100"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Link href="#contact" onClick={handleMobileNavClick} className="mt-2">
+              <Button className="w-full bg-teal-400 text-white hover:bg-brand-teal/90 font-bold py-6 rounded-xl">
+                Get a Quote
+              </Button>
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

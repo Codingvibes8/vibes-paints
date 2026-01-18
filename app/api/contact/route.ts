@@ -17,8 +17,8 @@ export async function POST(request: Request) {
 
     // Send email to you (the business owner)
     const { data, error } = await resend.emails.send({
-      from: 'NellyPaints Contact Form <onboarding@resend.dev>',
-      to: process.env.BUSINESS_EMAIL || 'hello@nellypaints.co.uk',
+      from: 'DayoPaints Contact Form <onboarding@resend.dev>',
+      to: process.env.BUSINESS_EMAIL || 'adestar860@gmail.com',
       replyTo: email,
       subject: `New Contact: ${service} - ${name}`,
       html: `
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
             </p>
           </div>
           <div style="background: #0d5c63; color: white; padding: 15px; text-align: center; font-size: 12px;">
-            <p style="margin: 0;">Sent from NellyPaints Contact Form</p>
+            <p style="margin: 0;">Sent from DayoPaints Contact Form</p>
           </div>
         </div>
       `,
@@ -53,25 +53,25 @@ export async function POST(request: Request) {
 
     // Optionally send confirmation email to customer
     await resend.emails.send({
-      from: 'NellyPaints <onboarding@resend.dev>',
+      from: 'DayoPaints <onboarding@resend.dev>',
       to: email,
-      subject: 'Thanks for contacting NellyPaints!',
+      subject: 'Thanks for contacting DayoPaints!',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #0d5c63; color: white; padding: 20px; text-align: center;">
             <h1 style="margin: 0;">Thank You, ${name}!</h1>
           </div>
           <div style="padding: 30px; background: #f9f9f9;">
-            <p>Thank you for reaching out to NellyPaints. We've received your enquiry about <strong>${service}</strong> and will get back to you within 24 hours.</p>
+            <p>Thank you for reaching out to DayoPaints. We've received your enquiry about <strong>${service}</strong> and will get back to you within 24 hours.</p>
             <h3 style="color: #0d5c63;">Your Message:</h3>
             <p style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #c9485b;">
               ${message.replace(/\n/g, '<br>')}
             </p>
             <p>If you have any urgent questions, feel free to call us directly.</p>
-            <p>Best regards,<br><strong>Nelly</strong><br>NellyPaints</p>
+            <p>Best regards,<br><strong>Dayo</strong><br>DayoPaints</p>
           </div>
           <div style="background: #0d5c63; color: white; padding: 15px; text-align: center; font-size: 12px;">
-            <p style="margin: 0;">© NellyPaints - Premium Painting & Decorating in NW London</p>
+            <p style="margin: 0;">© DayoPaints - Premium Painting & Decorating in NW London</p>
           </div>
         </div>
       `,
